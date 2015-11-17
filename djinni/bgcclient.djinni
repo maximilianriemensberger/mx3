@@ -1,12 +1,12 @@
-bgcclient = interface +c {
-    static create_bgcclient(
+bgc_client = interface +c {
+    static create_bgc_client(
             root_path: string,
             ui_thread: event_loop,
             launcher: thread_launcher,
             http_impl: http,
             web_socket_impl: web_socket,
             multicast_socket_impl: multicast_socket
-        ): bgcclient;
+        ): bgc_client;
 
     set_server_uri(uri: string);
     connect();
