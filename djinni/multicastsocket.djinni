@@ -1,0 +1,16 @@
+datagram = record {
+    src_address: binary;
+    dst_address: i16;
+    src_port: binary;
+    dst_port: i16;
+    data: binary;
+}
+
+multicast_socket_listener = interface +c {
+    on_datagram(packet: datagram);
+}
+
+multicast_socket = interface +o +j {
+    open(multicast_socket_address: string);
+    close();
+}
