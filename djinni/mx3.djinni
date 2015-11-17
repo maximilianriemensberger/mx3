@@ -1,3 +1,5 @@
+@import "websocket.djinni"
+@import "multicastsocket.djinni"
 @import "http.djinni"
 @import "event_loop.djinni"
 @import "thread.djinni"
