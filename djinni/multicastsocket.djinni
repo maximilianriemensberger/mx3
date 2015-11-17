@@ -1,8 +1,14 @@
+# The socket_address binary address array designates the type of the address:
+#   - 4 bytes in network byte order for IPv4
+#   - 8 bytes in network byte order for IPv6
+socket_address = record {
+    address: binary;
+    port: i16;
+}
+
 datagram = record {
-    src_address: binary;
-    dst_address: i16;
-    src_port: binary;
-    dst_port: i16;
+    src: socket_address;
+    dst: socket_address;
     data: binary;
 }
 
@@ -11,6 +17,6 @@ multicast_socket_listener = interface +c {
 }
 
 multicast_socket = interface +o +j {
-    open(multicast_socket_address: string);
+    open(multicast_socket_address: socket_address, listener: multicast_socket_listener);
     close();
 }
