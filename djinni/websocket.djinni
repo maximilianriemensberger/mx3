@@ -1,0 +1,13 @@
+web_socket_listener = interface +c {
+    on_open(code: i16, message: string);
+    on_close(code: i16, message: string, remote: bool);
+    on_error(code: i16, message: string);
+    on_message(message: string);
+}
+
+web_socket = interface +o +j {
+    connect(url: string, listener: web_socket_listener);
+    send(message: string);
+    is_connected(): bool;
+    close();
+}
