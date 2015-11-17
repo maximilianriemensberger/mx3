@@ -3,6 +3,7 @@
 @import "http.djinni"
 @import "event_loop.djinni"
 @import "thread.djinni"
+@import "bgcclient.djinni"
 @import "view_model.djinni"
 
 api = interface +c {

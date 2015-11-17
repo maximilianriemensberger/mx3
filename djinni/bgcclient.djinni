@@ -1,0 +1,20 @@
+bgcclient = interface +c {
+    static create_bgcclient(
+            root_path: string,
+            ui_thread: event_loop,
+            launcher: thread_launcher,
+            http_impl: http,
+            web_socket_impl: web_socket,
+            multicast_socket_impl: multicast_socket
+        ): bgcclient;
+
+    set_server_uri(uri: string);
+    connect();
+    disconnect();
+
+    get_clip_mpd_uri(clip_id: string): string;
+    get_clip_m3u8_uri(clip_id: string): string;
+
+    # Test only interface function
+    send(message: string);
+}
