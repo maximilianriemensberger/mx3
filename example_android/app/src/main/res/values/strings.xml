@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">MX3</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello">Send Hello</string>
+    <string name="hello_world"></string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_bgc_client_home">BgcClientHome</string>
 
 </resources>
