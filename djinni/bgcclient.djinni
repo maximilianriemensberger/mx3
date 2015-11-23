@@ -1,14 +1,26 @@
+event_listener = interface +j +o {
+    # Test only interface function
+    on_websocket_message(message: string);
+}
+
 bgc_client = interface +c {
     static create_bgc_client(
             root_path: string,
             ui_thread: event_loop,
             launcher: thread_launcher,
+            listener: event_listener,
+            logger: logger,
             http_impl: http,
             web_socket_impl: web_socket,
             multicast_socket_impl: multicast_socket
         ): bgc_client;
 
     set_server_uri(uri: string);
+
+    # Test only interface function
+    # (it should eventually be based on information from the server)
+    set_multicast_address(address: socket_address);
+
     connect();
     disconnect();
 

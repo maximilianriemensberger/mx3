@@ -1,0 +1,10 @@
+logger = interface +o +j {
+    const LOG_LEVEL_ERROR: i32 = 0;
+    const LOG_LEVEL_WARN: i32 = 1;
+    const LOG_LEVEL_INFO: i32 = 2;
+    const LOG_LEVEL_DEBUG: i32 = 3;
+    const LOG_LEVEL_VERBOSE: i32 = 4;
+    const LOG_LEVEL_FINEST: i32 = 5;
+    log(level: i32, tag: string, message: string);
+    log_exception(level: i32, tag:string, message: string, what: string);
+}

@@ -1,3 +1,4 @@
+@import "logger.djinni"
 @import "websocket.djinni"
 @import "multicastsocket.djinni"
 @import "http.djinni"
