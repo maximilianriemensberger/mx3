@@ -34,7 +34,7 @@ class BgcClient final : public mx3_gen::BgcClient {
     //void set_server_uri(string && uri); //for move optimization
 
     /** Test only interface function (The server will provide this in the future) */
-    virtual void set_multicast_address(const mx3_gen::SocketAddress & address);
+    virtual void set_multicast_address(const mx3_gen::SocketAddress & address) override;
     //void set_multicast_address(const mx3_gen::SocketAddress & address); //for move optimization
 
     virtual void connect() override;
