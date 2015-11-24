@@ -1316,7 +1316,10 @@ static const char CRLFCRLFBytes[] = {'\r', '\n', '\r', '\n'};
                     size_t scanSize = currentDataSize - _currentStringScanPosition;
                     
                     NSData *scan_data = [_currentFrameData subdataWithRange:NSMakeRange(_currentStringScanPosition, scanSize)];
-                    int32_t valid_utf8_size = validate_dispatch_data_partial_string(scan_data);
+                    
+                    // FIXME: we are hacking the following line, because adding the libicucore.dylib library currently fails
+                    //int32_t valid_utf8_size = validate_dispatch_data_partial_string(scan_data);
+                    int32_t valid_utf8_size = 0;
                     
                     if (valid_utf8_size == -1) {
                         [self closeWithCode:SRStatusCodeInvalidUTF8 reason:@"Text frames must be valid UTF-8"];

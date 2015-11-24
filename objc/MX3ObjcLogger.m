@@ -13,17 +13,17 @@
 - (void)log:(int32_t)level
         tag:(nonnull NSString *)tag
     message:(nonnull NSString *)message {
-    [self log:level tag:tag message:message];
+    [self logImpl:level tag:tag message:message];
 }
 
 - (void)logException:(int32_t)level
                  tag:(nonnull NSString *)tag
              message:(nonnull NSString *)message
                 what:(nonnull NSString *)what {
-    [self log:level tag:tag message:[NSString stringWithFormat:@"%@ [Exception: %@ ]", message, what]];
+    [self logImpl:level tag:tag message:[NSString stringWithFormat:@"%@ [Exception: %@ ]", message, what]];
 }
 
-- (void)logLevel:(int32_t)level tag:(nonnull NSString *)tag message:(nonnull NSString *)message {
+- (void)logImpl:(int32_t)level tag:(nonnull NSString *)tag message:(nonnull NSString *)message {
     NSString* prefix;
     
     // switch case statements do not work here

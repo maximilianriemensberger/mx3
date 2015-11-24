@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOA-vV-W5u">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bgc Client Test View Controller-->
+        <scene sceneID="koR-Xd-PNK">
+            <objects>
+                <viewController storyboardIdentifier="BgcClientTestViewController" id="aOA-vV-W5u" customClass="BgcClientTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kn5-eo-QiI"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Ob-6q-VzG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bxo-13-RET">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-3z-eqG">
+                                <rect key="frame" x="20" y="318" width="560" height="274"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb8-2T-S0N">
+                                <rect key="frame" x="505" y="24" width="75" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Send Hello"/>
+                                <connections>
+                                    <action selector="sendHelloButtonTouchUpInside:" destination="aOA-vV-W5u" eventType="touchUpInside" id="Qav-Zq-OWz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Received WebSocket messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMa-43-GMT">
+                                <rect key="frame" x="20" y="28" width="244" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVE-bG-V1z">
+                                <rect key="frame" x="20" y="289" width="29" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBi-uX-34d">
+                                <rect key="frame" x="20" y="57" width="560" height="224"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZVE-bG-V1z" firstAttribute="top" secondItem="CBi-uX-34d" secondAttribute="bottom" constant="8" id="5PE-RZ-YI1"/>
+                            <constraint firstItem="CBi-uX-34d" firstAttribute="leading" secondItem="Bxo-13-RET" secondAttribute="leadingMargin" id="8yv-TO-35t"/>
+                            <constraint firstItem="7Ob-6q-VzG" firstAttribute="top" secondItem="U3F-3z-eqG" secondAttribute="bottom" constant="8" id="HKZ-OI-AzN"/>
+                            <constraint firstItem="U3F-3z-eqG" firstAttribute="trailing" secondItem="Bxo-13-RET" secondAttribute="trailingMargin" id="LGR-4g-lEy"/>
+                            <constraint firstItem="tMa-43-GMT" firstAttribute="leading" secondItem="Bxo-13-RET" secondAttribute="leadingMargin" id="PEK-IF-TnK"/>
+                            <constraint firstItem="CBi-uX-34d" firstAttribute="trailing" secondItem="Bxo-13-RET" secondAttribute="trailingMargin" id="SEw-Me-4vp"/>
+                            <constraint firstItem="ZVE-bG-V1z" firstAttribute="leading" secondItem="Bxo-13-RET" secondAttribute="leadingMargin" id="XFQ-Ao-n0j"/>
+                            <constraint firstItem="Pb8-2T-S0N" firstAttribute="trailing" secondItem="Bxo-13-RET" secondAttribute="trailingMargin" id="aff-0d-q4X"/>
+                            <constraint firstItem="tMa-43-GMT" firstAttribute="top" secondItem="Kn5-eo-QiI" secondAttribute="bottom" constant="8" id="fge-wL-Bxu"/>
+                            <constraint firstItem="Pb8-2T-S0N" firstAttribute="top" secondItem="Kn5-eo-QiI" secondAttribute="bottom" constant="4" id="lBD-qq-Yku"/>
+                            <constraint firstItem="CBi-uX-34d" firstAttribute="top" secondItem="Pb8-2T-S0N" secondAttribute="bottom" constant="3" id="mmN-5K-Zz8"/>
+                            <constraint firstItem="U3F-3z-eqG" firstAttribute="top" secondItem="ZVE-bG-V1z" secondAttribute="bottom" constant="8" id="qMZ-cK-b2k"/>
+                            <constraint firstItem="ZVE-bG-V1z" firstAttribute="centerY" secondItem="Bxo-13-RET" secondAttribute="centerY" id="ubQ-ec-JH5"/>
+                            <constraint firstItem="U3F-3z-eqG" firstAttribute="leading" secondItem="Bxo-13-RET" secondAttribute="leadingMargin" id="wOr-2Q-ff5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_logTextView" destination="U3F-3z-eqG" id="FjC-hf-Unq"/>
+                        <outlet property="_receivedWebSocketMessagesTextView" destination="CBi-uX-34d" id="GQ7-lE-Qpi"/>
+                        <outlet property="_sendHelloButton" destination="Pb8-2T-S0N" id="TCl-u7-bdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESd-bN-7LL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="366"/>
+        </scene>
+    </scenes>
+</document>

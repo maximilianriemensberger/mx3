@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CF5E7F31C048A1D00731CF6 /* BgcClientTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5E7F21C048A1D00731CF6 /* BgcClientTestViewController.m */; };
+		4CF5E7F71C048A8400731CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF5E7F61C048A8400731CF6 /* Main.storyboard */; };
 		B09B174F1A1CD61100C8D6A7 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B174E1A1CD61100C8D6A7 /* libdjinni_objc.a */; };
 		F0C77173192A7821006469AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C77172192A7821006469AB /* Foundation.framework */; };
 		F0C77175192A7821006469AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C77174192A7821006469AB /* CoreGraphics.framework */; };
@@ -135,6 +137,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CF5E7F11C048A1D00731CF6 /* BgcClientTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BgcClientTestViewController.h; sourceTree = "<group>"; };
+		4CF5E7F21C048A1D00731CF6 /* BgcClientTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BgcClientTestViewController.m; sourceTree = "<group>"; };
+		4CF5E7F61C048A8400731CF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B024F79F1AAD5BFA008B8BB9 /* mx3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mx3.xcodeproj; path = ../../build_ios/mx3.xcodeproj; sourceTree = "<group>"; };
 		B02CAAE8192CFB0C007D3B2F /* libCppSQLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCppSQLite.a; path = "../../deps/build/Debug-iphoneos/libCppSQLite.a"; sourceTree = "<group>"; };
 		B09B174E1A1CD61100C8D6A7 /* libdjinni_objc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdjinni_objc.a; path = "../../deps/djinni/support-lib/build/Debug-iphoneos/libdjinni_objc.a"; sourceTree = "<group>"; };
@@ -256,6 +261,9 @@
 				F0C771E2192A800F006469AB /* MXSampleDataTableViewController.m */,
 				F0C77184192A7821006469AB /* Images.xcassets */,
 				F0C77179192A7821006469AB /* Supporting Files */,
+				4CF5E7F11C048A1D00731CF6 /* BgcClientTestViewController.h */,
+				4CF5E7F21C048A1D00731CF6 /* BgcClientTestViewController.m */,
+				4CF5E7F61C048A8400731CF6 /* Main.storyboard */,
 			);
 			path = MX3;
 			sourceTree = "<group>";
@@ -476,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C77185192A7821006469AB /* Images.xcassets in Resources */,
+				4CF5E7F71C048A8400731CF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +504,7 @@
 			files = (
 				F0C7717F192A7821006469AB /* main.m in Sources */,
 				F0C77183192A7821006469AB /* MXAppDelegate.m in Sources */,
+				4CF5E7F31C048A1D00731CF6 /* BgcClientTestViewController.m in Sources */,
 				F0C771E3192A800F006469AB /* MXSampleDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +622,7 @@
 					../../objc/,
 				);
 				INFOPLIST_FILE = "MX3/MX3-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/steven/projects/mx3/deps/djinni/support-lib/build/Debug-iphoneos",
@@ -637,7 +647,7 @@
 					../../objc/,
 				);
 				INFOPLIST_FILE = "MX3/MX3-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/steven/projects/mx3/deps/djinni/support-lib/build/Debug-iphoneos",
