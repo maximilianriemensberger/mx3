@@ -72,10 +72,6 @@ BgcClient::connect()
 {
     web_socket_->connect(server_uri_);
     //multicast_socket_->open(multicast_address_, /* listener? */);
-    
-    // FIXME: Not use is a error in xcode compilerr. root_path_ was not used!
-    logger_->log(mx3_gen::Logger::LOG_LEVEL_INFO, "BgcClient",
-                 "BgcClient::connect. Must use root_path_somewhere:" + root_path_);
 }
 
 void

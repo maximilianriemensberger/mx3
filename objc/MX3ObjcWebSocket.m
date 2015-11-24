@@ -41,8 +41,12 @@
     }
     
     _listener = listener;
+    
+    [_logger log:MX3LoggerLOGLEVELINFO tag:@"MX3ObjcWebSocket" message:@"Connecting ..."];
+
     _webSocket = [[SRWebSocket alloc] initWithURL:nsurl];
     _webSocket.delegate = self;
+    [_webSocket open];
 }
 
 - (void)send:(nonnull NSString *)message {
@@ -86,6 +90,9 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
     if (webSocket == _webSocket) {
         
+        [_logger log:MX3LoggerLOGLEVELINFO tag:@"MX3ObjcWebSocket" message:@"Connected ..."];
+
+        
         CFIndex statusCodeCFIndex = CFHTTPMessageGetResponseStatusCode(webSocket.receivedHTTPHeaders);
         int16_t statusCode = (int16_t) statusCodeCFIndex;
         
@@ -97,6 +104,9 @@
 }
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
     if (webSocket == _webSocket) {
+        
+        [_logger log:MX3LoggerLOGLEVELINFO tag:@"MX3ObjcWebSocket" message:@"Did fail with error ..."];
+        
         [_listener onError:(int16_t)0 message:error.localizedDescription];
     }
 }

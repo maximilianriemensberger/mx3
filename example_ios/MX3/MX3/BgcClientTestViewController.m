@@ -11,7 +11,6 @@
 #import "MXAppDelegate.h"
 
 @implementation BgcClientTestViewController {
-    
     __weak IBOutlet UITextView *_receivedWebSocketMessagesTextView;
     __weak IBOutlet UITextView *_logTextView;
     __weak IBOutlet UIButton *_sendHelloButton;
@@ -30,10 +29,13 @@
     
     // initialize bgcClient:
     
-    [self.bgcClient setServerUri:@"ws://192.168.1.1:4080"];
-    [self.bgcClient connect];
-
+    [self.bgcClient setServerUri:@"ws://echo.websocket.org"];
     
+    
+    // FIXME: This has to be done after waiting a little bit, otherwise it is logged in wrong order. Maybe Threading issue? Maybe logging issue?
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.bgcClient connect];        
+    });
 }
 
 -(void)dealloc {
