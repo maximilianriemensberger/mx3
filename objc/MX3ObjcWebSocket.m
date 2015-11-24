@@ -75,14 +75,9 @@
     if (webSocket == _webSocket) {
         
         if ([message isKindOfClass:[NSString class]]) {
-            
             [_listener onMessage:message];
-            
         } else if ([message isKindOfClass:[NSData class]]) {
-            // FIXME: If the server sends binary data, we interpret it as UTF8 and forward it as NSString
-            NSString* messageString = [[NSString alloc] initWithData:message encoding:NSUTF8StringEncoding];
-            
-            [_listener onMessage:messageString];
+            [_listener onError:0 message:@"Binary messages are not supported."];
         }
     }
 }
@@ -117,8 +112,6 @@
         BOOL remote = !wasClean;
         [_listener onClose:(int16_t)code message:reason remote:remote];
     }
-    
-    
 }
 
 @end
