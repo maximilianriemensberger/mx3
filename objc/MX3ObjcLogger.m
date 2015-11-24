@@ -43,7 +43,13 @@
         prefix = @"LOG: ";
     }
     
-    NSLog(@"%@ %@: %@", prefix, tag, message);
+    NSString* logString = [NSString stringWithFormat:@"%@ %@: %@", prefix, tag, message];
+    
+    NSLog(@"%@", logString);
+    
+    // additional for testing: send notification
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MX3ObjcLogger-log" object:self userInfo:@{@"logString" : logString}];
 }
 
 @end

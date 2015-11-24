@@ -9,7 +9,7 @@
 #pragma once
 #include "gen/MX3WebSocket.h"
 
-#import "SRWebSocket.h"
+#import "3rdParty/SocketRocket/SRWebSocket.h"
 
 @interface MX3ObjcWebSocket : NSObject<MX3WebSocket, SRWebSocketDelegate>
 
