@@ -48,7 +48,7 @@ public class BgcClientHome extends Activity {
                 new AndroidLogger(),
                 new AndroidHttp(),
                 new AndroidWebSocket(),
-                new AndroidMulticastSocket());
+                new AndroidMulticastSocket(this));
 
         bgcClient.setServerUri("ws://192.168.1.1:4080");
 
