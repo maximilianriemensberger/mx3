@@ -19,36 +19,37 @@ namespace mx3 {
  * enough (via various RAII patterns).
  */
 class BgcClient final : public mx3_gen::BgcClient {
-  public:
-    BgcClient(
-            const string & root_path,
-            unique_ptr<SingleThreadTaskRunner> ui_runner,
-            unique_ptr<SingleThreadTaskRunner> bg_runner,
-            shared_ptr<mx3_gen::EventListener> listener,
-            unique_ptr<mx3::WebSocket> web_socket,
-            unique_ptr<mx3::MulticastSocket> multicast_socket,
-            shared_ptr<mx3_gen::Logger> logger,
-            shared_ptr<mx3_gen::Http> http_client
-    );
+public:
+    BgcClient(const string & root_path,
+              unique_ptr<SingleThreadTaskRunner> ui_runner,
+              unique_ptr<SingleThreadTaskRunner> bg_runner,
+              shared_ptr<mx3_gen::EventListener> listener,
+              unique_ptr<mx3::WebSocket> web_socket,
+              unique_ptr<mx3::MulticastSocket> multicast_socket,
+              shared_ptr<mx3_gen::Logger> logger,
+              shared_ptr<mx3_gen::Http> http_client);
 
     virtual void set_server_uri(const string & uri) override;
-    //void set_server_uri(string && uri); //for move optimization
+    // void set_server_uri(string && uri); //for move optimization
 
-    /** Test only interface function (The server will provide this in the future) */
-    virtual void set_multicast_address(const mx3_gen::SocketAddress & address) override;
-    //void set_multicast_address(const mx3_gen::SocketAddress & address); //for move optimization
+    /** Test only interface function (The server will provide this in the
+     * future) */
+    virtual void
+    set_multicast_address(const mx3_gen::SocketAddress & address) override;
+    // void set_multicast_address(const mx3_gen::SocketAddress & address); //for
+    // move optimization
 
     virtual void connect() override;
     virtual void disconnect() override;
 
-    virtual string get_clip_mpd_uri(const string& clip_id) override;
-    virtual string get_clip_m3u8_uri(const string& clip_id) override;
+    virtual string get_clip_mpd_uri(const string & clip_id) override;
+    virtual string get_clip_m3u8_uri(const string & clip_id) override;
 
     /** Test only interface function */
-    virtual void send(const string& message) override;
+    virtual void send(const string & message) override;
 
-  private:
-    const string& root_path_;
+private:
+    const string & root_path_;
     const unique_ptr<SingleThreadTaskRunner> ui_thread_;
     const unique_ptr<SingleThreadTaskRunner> bg_thread_;
     const shared_ptr<mx3_gen::EventListener> listener_;
@@ -62,7 +63,6 @@ class BgcClient final : public mx3_gen::BgcClient {
     string server_uri_;
     mx3_gen::SocketAddress multicast_address_;
 };
-
 }
 
 /* vim: set et ts=4 sts=4 sw=4 tw=80 : */
