@@ -1,4 +1,3 @@
-#include <deque>
 #include "web_socket.hpp"
 
 using mx3::WebSocket;
