@@ -3,6 +3,7 @@ build/
 build_ios/
 build_mac/
 build_win/
+build_cpp/
 
 #gradle
 .gradle
