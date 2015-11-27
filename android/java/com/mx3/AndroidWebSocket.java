@@ -25,7 +25,7 @@ public class AndroidWebSocket extends WebSocket {
 
     @Override
     public void connect(String url, final WebSocketListener listener) {
-        Log.i("AndroidWebSocket", "Prepare connect ...");
+        Log.i("AndroidWebSocket", "Connecting ...");
         WebSocketClient client = clientReference.getAndSet(null);
         if (client != null)
             client.close();
@@ -34,6 +34,7 @@ public class AndroidWebSocket extends WebSocket {
         try {
             theUri = new URI(url);
         } catch (Exception e) {
+            Log.e("AndroidWebSocket", "Error converting the uri.", e);
             return;
         }
 
@@ -74,7 +75,6 @@ public class AndroidWebSocket extends WebSocket {
             }
         };
 
-        Log.i("AndroidWebSocket", "Connecting ...");
         new AndroidThreadLauncher().startThread("WebSocketConnector", new AsyncTask() {
             @Override
             public void execute() {
@@ -83,7 +83,7 @@ public class AndroidWebSocket extends WebSocket {
                     if (!clientReference.compareAndSet(null, newClient))
                         newClient.close();
                     else
-                        Log.i("AndroidWebSocket", "Connected ...");
+                        Log.i("AndroidWebSocket", "Connected.");
                 } catch (Exception e) {
                     //TODO
                 }
@@ -100,8 +100,10 @@ public class AndroidWebSocket extends WebSocket {
     @Override
     public void close() {
         WebSocketClient client = clientReference.getAndSet(null);
-        if (client != null)
+        if (client != null) {
             client.close();
+            Log.i("AndroidWebSocket", "Closed.");
+        }
     }
 
     @Override
