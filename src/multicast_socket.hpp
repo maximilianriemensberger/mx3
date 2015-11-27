@@ -1,11 +1,11 @@
 #pragma once
-#include "stl.hpp"
-#include "interface/logger.hpp"
-#include "interface/event_listener.hpp"
-#include "interface/socket_address.hpp"
 #include "interface/datagram.hpp"
+#include "interface/event_listener.hpp"
+#include "interface/logger.hpp"
 #include "interface/multicast_socket.hpp"
 #include "interface/multicast_socket_listener.hpp"
+#include "interface/socket_address.hpp"
+#include "stl.hpp"
 
 namespace mx3 {
 
@@ -43,7 +43,8 @@ public:
 
 private:
     std::map<MulticastSocket::ListenerKey,
-             unique_ptr<mx3_gen::MulticastSocketListener>> listeners_;
+             unique_ptr<mx3_gen::MulticastSocketListener>>
+            listeners_;
 };
 
 class LoggingMulticastSocketListener : public mx3_gen::MulticastSocketListener {

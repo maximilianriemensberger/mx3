@@ -9,5 +9,4 @@ public:
     using Task = function<void()>;
     virtual void post(const Task & task) = 0;
 };
-
 }
