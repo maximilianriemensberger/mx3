@@ -7,6 +7,7 @@
 #include "interface/bgc_client.hpp"
 #include "interface/logger.hpp"
 #include "web_socket.hpp"
+#include "multicast_socket.hpp"
 
 namespace mx3 {
 
@@ -25,9 +26,9 @@ class BgcClient final : public mx3_gen::BgcClient {
             unique_ptr<SingleThreadTaskRunner> bg_runner,
             shared_ptr<mx3_gen::EventListener> listener,
             unique_ptr<mx3::WebSocket> web_socket,
+            unique_ptr<mx3::MulticastSocket> multicast_socket,
             shared_ptr<mx3_gen::Logger> logger,
-            shared_ptr<mx3_gen::Http> http_client,
-            shared_ptr<mx3_gen::MulticastSocket> multicast_socket
+            shared_ptr<mx3_gen::Http> http_client
     );
 
     virtual void set_server_uri(const string & uri) override;
@@ -52,11 +53,11 @@ class BgcClient final : public mx3_gen::BgcClient {
     const unique_ptr<SingleThreadTaskRunner> bg_thread_;
     const shared_ptr<mx3_gen::EventListener> listener_;
     const unique_ptr<mx3::WebSocket> web_socket_;
+    const unique_ptr<mx3::MulticastSocket> multicast_socket_;
 
     // TODO: replace by appropriate wrapper classes?
     const shared_ptr<mx3_gen::Logger> logger_;
     const shared_ptr<mx3_gen::Http> http_;
-    const shared_ptr<mx3_gen::MulticastSocket> multicast_socket_;
 
     string server_uri_;
     mx3_gen::SocketAddress multicast_address_;
