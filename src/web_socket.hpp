@@ -9,6 +9,12 @@ namespace mx3 {
 
 class BroadcastingWebSocketListener;
 
+/**
+ * WebSocket
+ *
+ * Wraps the communication with the device framework interfaces WebSocket and
+ * WebSocketListener.
+ */
 class WebSocket {
   public:
     WebSocket(shared_ptr<mx3_gen::WebSocket> web_socket);
@@ -27,7 +33,9 @@ class WebSocket {
     void send(const string & message);
 
   private:
+    // Handle to the WebSocket interface
     const shared_ptr<mx3_gen::WebSocket> web_socket_;
+    // WebSocketListener interface handle that is passed to the WebSocket interface
     const shared_ptr<mx3::BroadcastingWebSocketListener> broadcaster_;
 };
 
