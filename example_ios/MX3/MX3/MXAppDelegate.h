@@ -6,4 +6,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) MX3BgcClient *bgcClient;
+@property (strong, nonatomic) id<MX3Logger> logger;
+
 @end

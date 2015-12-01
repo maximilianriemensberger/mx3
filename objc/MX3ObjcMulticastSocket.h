@@ -9,7 +9,9 @@
 #pragma once
 #include "gen/MX3MulticastSocket.h"
 
-@interface MX3ObjcMulticastSocket : NSObject<MX3MulticastSocket>
+#import "3rdParty/UdpSocket/GCDAsyncUdpSocket.h"
+
+@interface MX3ObjcMulticastSocket : NSObject<MX3MulticastSocket, GCDAsyncUdpSocketDelegate>
 
 - (void)open:(nonnull MX3SocketAddress *)multicastSocketAddress
     listener:(nullable MX3MulticastSocketListener *)listener;

@@ -71,7 +71,7 @@ void LoggingMulticastSocketListener::on_datagram(
         const mx3_gen::Datagram & datagram)
 {
     logger_->log(mx3_gen::Logger::LOG_LEVEL_INFO, "MulticastSocket",
-                 "DATAGRAM: length = " + datagram.data.size());
+                 "DATAGRAM: length = " + to_string(datagram.data.size()));
 }
 
 /* vim: set et ts=4 sts=4 sw=4 tw=80 : */
